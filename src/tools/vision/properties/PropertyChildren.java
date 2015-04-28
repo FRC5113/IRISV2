@@ -32,23 +32,6 @@ public class PropertyChildren extends PropertyBase {
     private PassBase parentPass;
 
 
-    private void refreshUnusedChildrenList()
-    {
-
-        ObservableList<PassBase> unused;
-        unused = FXCollections.observableArrayList();
-
-        List<PassBase> unusedList = new ArrayList<>(passes);
-        unusedList.removeAll(children);
-        unusedList.remove(parentPass);
-
-        unused.addAll(unusedList);
-
-        childrenListView.setItems(children);
-        unAddedListView.setItems(unused);
-    }
-
-
     public PropertyChildren(PassBase parent, List<PassBase> passes) {
 
         super();
@@ -80,12 +63,10 @@ public class PropertyChildren extends PropertyBase {
 
         //On click, remove one item from the children list and add it to the unadded list
         removeButton.setOnAction(event -> {
-            if(childrenListView.getSelectionModel().getSelectedItem() != null)
+            if (childrenListView.getSelectionModel().getSelectedItem() != null)
                 children.remove(childrenListView.getSelectionModel().getSelectedItem());
             refreshUnusedChildrenList();
         });
-
-
 
 
         unAddedLabel = new Label("Unadded Passes");
@@ -104,12 +85,27 @@ public class PropertyChildren extends PropertyBase {
 
         //On click, remove one item from the unadded list and add it to children
         addButton.setOnAction(event -> {
-            if(unAddedListView.getSelectionModel().getSelectedItem() != null)
+            if (unAddedListView.getSelectionModel().getSelectedItem() != null)
                 children.add((PassBase) unAddedListView.getSelectionModel().getSelectedItem());
             refreshUnusedChildrenList();
         });
 
         refreshUnusedChildrenList();
+    }
+
+    private void refreshUnusedChildrenList() {
+
+        ObservableList<PassBase> unused;
+        unused = FXCollections.observableArrayList();
+
+        List<PassBase> unusedList = new ArrayList<>(passes);
+        unusedList.removeAll(children);
+        unusedList.remove(parentPass);
+
+        unused.addAll(unusedList);
+
+        childrenListView.setItems(children);
+        unAddedListView.setItems(unused);
     }
 
     @Override

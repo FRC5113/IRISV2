@@ -1,7 +1,7 @@
 package tools.vision.Passes;
 
-import org.opencv.core.Mat;
 import gui.Controller;
+import org.opencv.core.Mat;
 import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyInteger;
 
@@ -36,8 +36,6 @@ public class PassGridOverlay extends PassBase {
         gridColor = new PropertyColor();
         gridColor.setNickname("Grid color");
         getTreeItem().getChildren().add(gridColor.getTreeItem());
-
-        c.getVisionRecTreeView().getRoot().getChildren().add(getTreeItem());
     }
 
     @Override

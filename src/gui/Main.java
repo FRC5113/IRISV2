@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tools.Logger;
 
 /*
 This tool is used for vision recognition, as well as general computer and robot monitoring.
@@ -43,6 +44,7 @@ public class Main extends Application {
         vrMan = new VisionRecManager(controller);
         mon = new ResourceMonitor();
 
+        Logger.logln("Started program!");
 
         Task task = new Task<Void>() {
             @Override

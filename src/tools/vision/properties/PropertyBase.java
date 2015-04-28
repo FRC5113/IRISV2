@@ -1,6 +1,5 @@
 package tools.vision.properties;
 
-import tools.vision.Passes.PassBase;
 import tools.vision.Treeable;
 
 /**

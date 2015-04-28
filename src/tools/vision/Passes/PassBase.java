@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
 import org.opencv.core.Mat;
 import tools.vision.Treeable;
 import tools.vision.properties.PropertyChildren;
-import tools.vision.properties.PropertyColor;
 
 import java.io.File;
 import java.util.List;
@@ -22,9 +21,8 @@ import java.util.List;
 public abstract class PassBase extends Treeable {
 
     protected Image lastPreviewImage;
-
-    private ImageView view;
     protected PropertyChildren children;
+    private ImageView view;
 
 
     public PassBase(Controller c, List<PassBase> passes) {
@@ -42,48 +40,36 @@ public abstract class PassBase extends Treeable {
 
     //Similar to setNickname, but adds a number to the end if more than one pass exists already with that name.
     //For example, if there is already a "Grid Overlay" when you try to add one, it will call it "Grid Overlay 2" instead.
-    protected void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes)
-    {
+    protected void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes) {
         boolean taken = false;
-        for(PassBase b : passes)
-        {
-            if(b.getNickname().equalsIgnoreCase(nicknameNumbered))
-            {
+        for (PassBase b : passes) {
+            if (b.getNickname().equalsIgnoreCase(nicknameNumbered)) {
                 taken = true;
                 break;
             }
         }
 
-        if(taken)
-        {
+        if (taken) {
             setNicknameNumbered(nicknameNumbered, passes, 1);
-        }
-        else
-        {
+        } else {
             setNickname(nicknameNumbered);
         }
     }
 
     //Similar to setNickname, but adds a number to the end if more than one pass exists already with that name.
     //For example, if there is already a "Grid Overlay" when you try to add one, it will call it "Grid Overlay 2" instead.
-    private void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes, int count)
-    {
+    private void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes, int count) {
         boolean taken = false;
-        for(PassBase b : passes)
-        {
-            if(b.getNickname().equalsIgnoreCase(nicknameNumbered + " " + count))
-            {
+        for (PassBase b : passes) {
+            if (b.getNickname().equalsIgnoreCase(nicknameNumbered + " " + count)) {
                 taken = true;
                 break;
             }
         }
 
-        if(taken)
-        {
+        if (taken) {
             setNicknameNumbered(nicknameNumbered, passes, count + 1);
-        }
-        else
-        {
+        } else {
             setNickname(nicknameNumbered + " " + count);
         }
     }

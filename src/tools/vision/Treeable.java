@@ -12,12 +12,9 @@ public class Treeable {
     //Name to be displayed in tree view
     private String nickname = "Generic Property Base";
     private TreeItem treeItem;
+
     public Treeable() {
         treeItem = new TreeItem<Treeable>(this);
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
     }
 
     public TreeItem getTreeItem() {
@@ -29,9 +26,12 @@ public class Treeable {
         return getNickname();
     }
 
-    public String getNickname()
-    {
+    public String getNickname() {
         return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public void createSettingsPanel(Pane p) {

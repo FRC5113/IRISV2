@@ -7,6 +7,8 @@ import javafx.scene.layout.Pane;
 import tools.Logger;
 import tools.vision.Treeable;
 
+import java.util.Optional;
+
 /**
  * Created by Jake on 4/26/2015.
  * This class handles most of the interactions with the UI, and keeps track of its important components
@@ -18,12 +20,31 @@ public class Controller {
     @FXML
     private AreaChart resMonCompRAM;
 
+    public Button getButtonRenamePass() {
+        return buttonRenamePass;
+    }
+
+    //Renames the selected pass by changing its nickname
+    @FXML
+    private Button buttonRenamePass;
+
+    //Tree containing every pass and their properties
     @FXML
     private TreeView visionRecTreeView;
     //The area in which each individual property creates its settings, or where passes draw their preview image.
     @FXML
     private Pane vrPropertySettings;
-
+    //The following list views hold potential yet uncreated types of passes
+    @FXML
+    private ListView passCreatorSourcesView;
+    @FXML
+    private ListView passCreatorFormattingView;
+    @FXML
+    private ListView passCreatorImgprocView;
+    @FXML
+    private ListView passCreatorDebugView;
+    @FXML
+    private Button buttonCreateNewPass;
     //Label used to display the amount of time that VR has been running for
     @FXML
     private Label vrUptimeClock;
@@ -36,13 +57,32 @@ public class Controller {
     //Starts/Stops automatic processing
     @FXML
     private ToggleButton vrStartStopToggle;
-
     //Logger view area
     @FXML
     private TextArea logViewer;
     //Logger auto scroll checkbox
     @FXML
     private CheckBox logViewerAutoScroll;
+
+    public ListView getPassCreatorSourcesView() {
+        return passCreatorSourcesView;
+    }
+
+    public ListView getPassCreatorFormattingView() {
+        return passCreatorFormattingView;
+    }
+
+    public ListView getPassCreatorImgprocView() {
+        return passCreatorImgprocView;
+    }
+
+    public ListView getPassCreatorDebugView() {
+        return passCreatorDebugView;
+    }
+
+    public Button getButtonCreateNewPass() {
+        return buttonCreateNewPass;
+    }
 
     public void setup() {
         visionRecTreeView.setRoot((new TreeItem<>("Vision Recognition Passes")));
@@ -52,8 +92,7 @@ public class Controller {
                 (observable, oldValue, newValue) -> {
                     TreeItem selectedItem = (TreeItem) newValue;
                     try {
-                        if (selectedItem.getValue() instanceof Treeable) {
-                            Logger.logln("Selected Text : " + selectedItem.getValue());
+                        if (selectedItem.getValue() != null && selectedItem.getValue() instanceof Treeable) {
                             ((Treeable) selectedItem.getValue()).createSettingsPanel(vrPropertySettings);
                         }
                     } catch (Exception e) {
@@ -62,7 +101,6 @@ public class Controller {
                 });
 
         Logger.setTextArea(logViewer, logViewerAutoScroll);
-
     }
 
     public void update() {

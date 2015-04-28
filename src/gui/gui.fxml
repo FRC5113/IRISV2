@@ -55,22 +55,26 @@
                                                                     <items>
                                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                             <children>
-                                                                                <TreeView fx:id="visionRecTreeView" layoutX="14.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                                <Button layoutY="347.0" mnemonicParsing="false" text="Delete" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" />
-                                                                                <Button layoutX="57.0" layoutY="345.0" mnemonicParsing="false" text="Up" AnchorPane.bottomAnchor="3.0" />
-                                                                                <Button layoutX="92.0" layoutY="345.0" mnemonicParsing="false" text="Down" AnchorPane.bottomAnchor="3.0" />
-                                                                                <Button layoutX="142.0" layoutY="345.0" mnemonicParsing="false" text="Rename" AnchorPane.bottomAnchor="3.0" />
+                                                                                <TreeView fx:id="visionRecTreeView" layoutX="14.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                            <ToolBar layoutY="339.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                              <items>
+                                                                <Button mnemonicParsing="false" text="Remove TODO" />
+                                                                  <Button fx:id="buttonRenamePass" mnemonicParsing="false" text="Rename" />
+                                                                  <Button mnemonicParsing="false" text="Move up TODO" />
+                                                                  <Button mnemonicParsing="false" text="Move down TODO" />
+                                                              </items>
+                                                            </ToolBar>
                                                                             </children>
                                                                         </AnchorPane>
                                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                             <children>
-                                                                                <Accordion layoutX="-2.0" layoutY="23.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                <Accordion layoutX="-2.0" layoutY="23.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                                     <panes>
                                                                                         <TitledPane animated="false" text="Sources">
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
-                                                                                                        <ListView layoutX="-42.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                        <ListView fx:id="passCreatorSourcesView" layoutX="-42.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
@@ -79,7 +83,7 @@
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
-                                                                                                        <ListView layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                        <ListView fx:id="passCreatorFormattingView" layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
@@ -88,7 +92,7 @@
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
-                                                                                                        <ListView layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                        <ListView fx:id="passCreatorDebugView" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
@@ -97,13 +101,18 @@
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
-                                                                                                        <ListView layoutX="-2.0" layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                        <ListView fx:id="passCreatorImgprocView" layoutX="-2.0" layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
                                                                                         </TitledPane>
                                                                                     </panes>
                                                                                 </Accordion>
+                                                                                <ToolBar layoutY="339.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                                                    <items>
+                                                                                        <Button fx:id="buttonCreateNewPass" mnemonicParsing="false" text="Create new instance of selected pass" />
+                                                                                    </items>
+                                                                                </ToolBar>
                                                                             </children>
                                                                         </AnchorPane>
                                                                     </items>
@@ -112,15 +121,7 @@
                                                         </AnchorPane>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="946.0">
                                                             <children>
-                                                                <Pane fx:id="vrPropertySettings" layoutX="125.0" layoutY="29.0" prefHeight="754.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                                    <children>
-                                                                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="110.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
-                                                                            <image>
-                                                                                <Image url="@../../res/frc5113logo.png" />
-                                                                            </image>
-                                                                        </ImageView>
-                                                                    </children>
-                                                                </Pane>
+                                                                <Pane fx:id="vrPropertySettings" layoutX="125.0" layoutY="29.0" prefHeight="754.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                             </children>
                                                         </AnchorPane>
                                                     </items>
