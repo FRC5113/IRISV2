@@ -3,7 +3,7 @@ package gui;
 import javafx.scene.Scene;
 import javafx.stage.FileChooser;
 import tools.Logger;
-import tools.vision.Passes.PassBase;
+import tools.vision.passes.PassBase;
 
 import java.io.*;
 import java.util.ArrayList;

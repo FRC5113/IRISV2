@@ -6,8 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
-import tools.Logger;
-import tools.vision.Passes.PassBase;
+import tools.vision.passes.PassBase;
 
 import java.io.Serializable;
 import java.util.ArrayList;

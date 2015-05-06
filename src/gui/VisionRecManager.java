@@ -1,14 +1,12 @@
 package gui;
 
-import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import tools.Logger;
-import tools.vision.Passes.PassBase;
-import tools.vision.Passes.PassGridOverlay;
-import tools.vision.Passes.SourceImageFile;
+import tools.vision.passes.PassBase;
+import tools.vision.passes.drawing.PassGridOverlay;
+import tools.vision.passes.sources.SourceImageFile;
 import tools.vision.Treeable;
 
-import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -1,9 +1,9 @@
-package tools.vision.Passes;
+package tools.vision.passes.drawing;
 
 import gui.Controller;
 import javafx.scene.image.Image;
 import org.opencv.core.Mat;
-import tools.vision.properties.PropertyChildren;
+import tools.vision.passes.PassBase;
 import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyInteger;
 

@@ -2,52 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui/SaveLoadManager.java" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\Passes\PassImageFormatConverter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\Passes\PassImageSection.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\Passes\PassTextOverlay.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\Passes\SourceComputerCam.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\Passes\SourceRobot.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\properties\PropertyBool.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\properties\PropertyInteger$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\properties\PropertyParents.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jake\IRISV2\out\production\IRISV2\tools\vision\properties\PropertyString.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\Passes\PassImageFormatConverter.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassImageFormatConverter.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\Passes\PassImageSection.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassImageSection.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\Passes\PassTextOverlay.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassTextOverlay.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\Passes\SourceComputerCam.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/SourceComputerCam.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\Passes\SourceRobot.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/SourceRobot.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\properties\PropertyBool.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PropertyBool.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\properties\PropertyParents.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PropertyParents.java" />
-      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\properties\PropertyString.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PropertyString.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/gui/Controller.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/gui/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/gui/Main$1.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/gui/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/gui/Main.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/gui/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/PassBase.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/PassBase.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/PassGridOverlay.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/PassGridOverlay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyBase.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyBase.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyChildren.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyChildren.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyColor.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyColor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyImageFile.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyImageFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyInteger.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/properties/PropertyInteger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/SourceImageFile.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Passes/SourceImageFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Treeable.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/tools/vision/Treeable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/gui/VisionRecManager.class" afterPath="$PROJECT_DIR$/out/production/IRISV2/gui/VisionRecManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Controller.java" afterPath="$PROJECT_DIR$/src/gui/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Jake.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Jake.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassDrawSimpleShape.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassHistogram.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassResize.java" />
+      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\passes\PassGridOverlay.java" afterPath="$PROJECT_DIR$/src/tools/vision/passes/drawing/PassGridOverlay.java" />
+      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\passes\SourceImageFile.java" afterPath="$PROJECT_DIR$/src/tools/vision/passes/sources/SourceImageFile.java" />
+      <change type="MOVED" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\unfinished\PassTextOverlay.java" afterPath="$PROJECT_DIR$/src/tools/vision/unfinished/PassDrawText.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Main.java" afterPath="$PROJECT_DIR$/src/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/Passes/PassBase.java" afterPath="$PROJECT_DIR$/src/tools/vision/Passes/PassBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/Passes/PassGridOverlay.java" afterPath="$PROJECT_DIR$/src/tools/vision/Passes/PassGridOverlay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/properties/PropertyBase.java" afterPath="$PROJECT_DIR$/src/tools/vision/properties/PropertyBase.java" />
+      <change type="MODIFICATION" beforePath="C:\Users\Jake\IRISV2\src\tools\vision\passes\PassBase.java" afterPath="$PROJECT_DIR$/src/tools/vision/passes/PassBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/properties/PropertyChildren.java" afterPath="$PROJECT_DIR$/src/tools/vision/properties/PropertyChildren.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/properties/PropertyColor.java" afterPath="$PROJECT_DIR$/src/tools/vision/properties/PropertyColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/properties/PropertyImageFile.java" afterPath="$PROJECT_DIR$/src/tools/vision/properties/PropertyImageFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/properties/PropertyInteger.java" afterPath="$PROJECT_DIR$/src/tools/vision/properties/PropertyInteger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/Passes/SourceImageFile.java" afterPath="$PROJECT_DIR$/src/tools/vision/Passes/SourceImageFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/vision/Treeable.java" afterPath="$PROJECT_DIR$/src/tools/vision/Treeable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/SaveLoadManager.java" afterPath="$PROJECT_DIR$/src/gui/SaveLoadManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/VisionRecManager.java" afterPath="$PROJECT_DIR$/src/gui/VisionRecManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IRISV2/gui/gui.fxml" afterPath="$PROJECT_DIR$/out/production/IRISV2/gui/gui.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/gui.fxml" afterPath="$PROJECT_DIR$/src/gui/gui.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -108,16 +73,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VisionRecManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/VisionRecManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SaveLoadManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/SaveLoadManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,10 +86,10 @@
         </entry>
       </file>
       <file leaf-file-name="PassBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/PassBase.java">
+        <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/PassBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.931034">
-              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,10 +98,10 @@
         </entry>
       </file>
       <file leaf-file-name="SourceImageFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/SourceImageFile.java">
+        <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/sources/SourceImageFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="25" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <caret line="47" column="25" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,34 +143,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyInteger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tools/vision/properties/PropertyInteger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-              <folding>
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertyChildren.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropertyChildren.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tools/vision/properties/PropertyChildren.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22442244">
-              <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="123" selection-start-line="16" selection-start-column="123" selection-end-line="16" selection-end-column="123" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PassGridOverlay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/PassGridOverlay.java">
+      <file leaf-file-name="PassHistogram.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassHistogram.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PassDrawSimpleShape.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassDrawSimpleShape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09023354">
+              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -271,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/tools/properties/PropertyChildren.java" />
         <option value="$PROJECT_DIR$/src/sample/gui.fxml" />
         <option value="$PROJECT_DIR$/src/gui/PassCreator.java" />
-        <option value="$PROJECT_DIR$/src/gui/Controller.java" />
         <option value="$PROJECT_DIR$/src/gui/Main.java" />
         <option value="$PROJECT_DIR$/src/tools/vision/properties/PropertyBase.java" />
         <option value="$PROJECT_DIR$/src/gui/VisionRecManager.java" />
@@ -284,6 +247,7 @@
         <option value="$PROJECT_DIR$/src/tools/vision/Passes/PassGridOverlay.java" />
         <option value="$PROJECT_DIR$/src/gui/SaveLoadManager.java" />
         <option value="$PROJECT_DIR$/src/tools/vision/properties/PropertyChildren.java" />
+        <option value="$PROJECT_DIR$/src/gui/Controller.java" />
       </list>
     </option>
   </component>
@@ -292,10 +256,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="-771" />
+    <option name="y" value="64" />
+    <option name="width" value="1918" />
+    <option name="height" value="1078" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -325,8 +289,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,6 +369,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="unfinished" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vision" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="properties" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -433,7 +421,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Passes" />
+              <option name="myItemId" value="passes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vision" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="passes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRISV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vision" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="passes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,6 +519,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -700,7 +750,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-771" y="64" width="1918" height="1078" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -711,11 +761,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33505154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15208334" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19716088" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -764,27 +814,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/SourceComputerCam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/SourceImageFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassImageFormatConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -819,7 +848,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/PassBase.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/PassBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -884,13 +913,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/gui.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/ResourceMonitor.java">
@@ -1003,7 +1032,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassTextOverlay.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassDrawText.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
@@ -1015,11 +1044,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/frc5113logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
@@ -1037,14 +1061,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/gui.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26516464">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tools/Logger.java">
@@ -1061,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13385826">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,21 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32125986">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,11 +1109,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16062993">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/PassGridOverlay.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/drawing/PassGridOverlay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
@@ -1116,7 +1123,7 @@
     <entry file="file://$PROJECT_DIR$/src/gui/VisionRecManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1162,10 +1169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/SourceImageFile.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/sources/SourceImageFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1180,20 +1187,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tools/vision/Passes/PassBase.java">
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/passes/PassBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.931034">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassResize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13385826">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/frc5113logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tools/vision/properties/PropertyChildren.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22442244">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="123" selection-start-line="16" selection-start-column="123" selection-end-line="16" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassHistogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/vision/unfinished/PassDrawSimpleShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09023354">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>

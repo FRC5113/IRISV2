@@ -1,15 +1,13 @@
-package tools.vision.Passes;
+package tools.vision.passes;
 
 import gui.Controller;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import org.opencv.core.Mat;
-import tools.Logger;
 import tools.vision.Treeable;
 import tools.vision.properties.PropertyChildren;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 

@@ -3,19 +3,13 @@ package gui;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.stage.Stage;
 import tools.Logger;
-import tools.vision.Passes.PassBase;
-import tools.vision.Treeable;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.concurrent.CountDownLatch;
+import tools.vision.passes.PassBase;
 
 /*
 This tool is used for vision recognition, as well as general computer and robot monitoring.
