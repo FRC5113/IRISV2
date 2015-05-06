@@ -12,8 +12,10 @@
     <children>
         <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1131.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <menus>
-                <Menu mnemonicParsing="false" text="TODO">
+                <Menu mnemonicParsing="false" text="File">
                     <items>
+                  <MenuItem fx:id="menuItemSaveVR" mnemonicParsing="false" text="Save VR" />
+                  <MenuItem fx:id="menuItemLoadVR" mnemonicParsing="false" text="Load VR" />
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
@@ -121,7 +123,7 @@
                                                         </AnchorPane>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="946.0">
                                                             <children>
-                                                                <Pane fx:id="vrPropertySettings" layoutX="125.0" layoutY="29.0" prefHeight="754.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                <Pane fx:id="vrPropertySettings" layoutX="125.0" layoutY="29.0" prefHeight="754.0" prefWidth="649.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
                                                             </children>
                                                         </AnchorPane>
                                                     </items>

@@ -3,21 +3,31 @@ package tools.vision;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.Pane;
 
+import java.io.Serializable;
+
 /**
  * Created by Jake on 4/27/2015.
  * Objects, including Passes and Properties, that can be included and display in the VR Tree View
  */
-public class Treeable {
+public class Treeable implements Serializable {
 
     //Name to be displayed in tree view
-    private String nickname = "Generic Property Base";
-    private TreeItem treeItem;
+    public String nickname;
+    private transient TreeItem treeItem;
 
     public Treeable() {
-        treeItem = new TreeItem<Treeable>(this);
+        setup();
+    }
+
+    public void setup()
+    {
     }
 
     public TreeItem getTreeItem() {
+        if(treeItem != null)
+            return treeItem;
+        else
+            treeItem = new TreeItem<>(this);
         return treeItem;
     }
 

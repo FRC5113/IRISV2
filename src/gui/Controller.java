@@ -15,6 +15,27 @@ import java.util.Optional;
  */
 public class Controller {
 
+    public MenuItem getMenuItemLoadVR() {
+        return menuItemLoadVR;
+    }
+
+    public void setMenuItemLoadVR(MenuItem menuItemLoadVR) {
+        this.menuItemLoadVR = menuItemLoadVR;
+    }
+
+    public MenuItem getMenuItemSaveVR() {
+        return menuItemSaveVR;
+    }
+
+    public void setMenuItemSaveVR(MenuItem menuItemSaveVR) {
+        this.menuItemSaveVR = menuItemSaveVR;
+    }
+
+    @FXML
+    private MenuItem menuItemLoadVR;
+    @FXML
+    private MenuItem menuItemSaveVR;
+
     @FXML
     private AreaChart resMonCompCPU;
     @FXML

@@ -1,10 +1,13 @@
 package tools.vision.Passes;
 
 import gui.Controller;
+import javafx.scene.image.Image;
 import org.opencv.core.Mat;
+import tools.vision.properties.PropertyChildren;
 import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyInteger;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -13,23 +16,23 @@ import java.util.List;
  * Draws a grid over top of a material image
  * Serves little purpose in recognition, mostly used for driver assistance or testing
  */
-public class PassGridOverlay extends PassBase {
+public class PassGridOverlay extends PassBase implements Serializable {
 
-    PropertyInteger gridSpacingX;
-    PropertyInteger gridSpacingY;
-    PropertyColor gridColor;
+    public PropertyInteger gridSpacingX;
+    public PropertyInteger gridSpacingY;
+    public PropertyColor gridColor;
 
     public PassGridOverlay(Controller c, List<PassBase> passes) {
 
         super(c, passes);
 
-        setNicknameNumbered("Grid Overlay", passes);
+        setNicknameNumbered("Pass Grid Overlay", passes);
 
-        gridSpacingX = new PropertyInteger();
+        gridSpacingX = new PropertyInteger(40);
         gridSpacingX.setNickname("Units per row");
         getTreeItem().getChildren().add(gridSpacingX.getTreeItem());
 
-        gridSpacingY = new PropertyInteger();
+        gridSpacingY = new PropertyInteger(40);
         gridSpacingY.setNickname("Units per column");
         getTreeItem().getChildren().add(gridSpacingY.getTreeItem());
 
@@ -38,8 +41,29 @@ public class PassGridOverlay extends PassBase {
         getTreeItem().getChildren().add(gridColor.getTreeItem());
     }
 
+    public void setup(Controller c, List<PassBase> passes)
+    {
+        if(gridColor != null) {
+            gridSpacingX.setup();
+            getTreeItem().getChildren().add(gridSpacingX.getTreeItem());
+
+            gridSpacingY.setup();
+            getTreeItem().getChildren().add(gridSpacingY.getTreeItem());
+
+            gridColor.setup();
+            getTreeItem().getChildren().add(gridColor.getTreeItem());
+        }
+        children.setup();
+        getTreeItem().getChildren().add(children.getTreeItem());
+    }
+
     @Override
     public void process(Mat mat) {
 
+    }
+
+    @Override
+    public Image getPreviewImage() {
+        return null;
     }
 }

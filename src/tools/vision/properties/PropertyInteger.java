@@ -12,28 +12,40 @@ import tools.Logger;
 public class PropertyInteger extends PropertyBase {
 
     private int value = 0;
-    private TextField field;
+    private transient TextField field;
 
     public PropertyInteger() {
+        super();
+    }
+
+    public void setup()
+    {
         field = new TextField("" + value);
 
-        field.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable,
-                                String oldValue, String newValue) {
-                try {
-                    setValue();
-                } catch (Exception e) {
-                    Logger.log("Error, not an integer value.");
-                    field.setText("" + value);
-                }
+
+        field.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                setValue();
+            } catch (Exception e) {
+                Logger.log("Error, not an integer value.");
+                field.setText("" + value);
             }
         });
+    }
+
+    public PropertyInteger(int initial)
+    {
+        this();
+        value = initial;
+        field.setText("" + value);
     }
 
     @Override
     public void createSettingsPanel(Pane p) {
         p.getChildren().clear();
+        Logger.logln(p.toString());
+        Logger.logln(p.getChildren().toString());
+        Logger.logln("" + (field == null));
         p.getChildren().add(field);
     }
 

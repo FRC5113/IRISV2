@@ -3,11 +3,19 @@ package gui;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TreeItem;
 import javafx.stage.Stage;
 import tools.Logger;
+import tools.vision.Passes.PassBase;
+import tools.vision.Treeable;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.CountDownLatch;
 
 /*
 This tool is used for vision recognition, as well as general computer and robot monitoring.
@@ -44,23 +52,70 @@ public class Main extends Application {
         vrMan = new VisionRecManager(controller);
         mon = new ResourceMonitor();
 
+        controller.getMenuItemSaveVR().setOnAction(t -> SaveLoadManager.save(vrMan, primaryStage.getScene()));
+        controller.getMenuItemLoadVR().setOnAction(t -> SaveLoadManager.load(vrMan, primaryStage.getScene()));
+
         Logger.logln("Started program!");
+
+
 
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
+
+                long graphTimer = System.currentTimeMillis();
+                long sleepTimer = System.currentTimeMillis();
+
                 while (true) {
+
+                    //Non FX stuff goes here (Img processing mostly)
+
+                    graphTimer = tryUpdateGraphs(graphTimer);
+
                     Platform.runLater(() -> {
-                        mon.updateHistory();
+                        //FX Stuff goes here
                         mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
                         controller.update();
+
+                        //Set the displayed pass's view to be updated as much as possible
+                        TreeItem selectedItem = (TreeItem) controller.getVisionRecTreeView().getSelectionModel().getSelectedItem();
+                        try {
+                            if (selectedItem != null && selectedItem.getValue() != null && selectedItem.getValue() instanceof PassBase) {
+                                ((PassBase) selectedItem.getValue()).updateView();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     });
-                    Thread.sleep(1000);
+
+                    //Make sure we don't run too fast
+                    if(sleepTimer + 500 < System.currentTimeMillis())
+                    {
+                        sleepTimer = System.currentTimeMillis();
+                    }
+                    else
+                    {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         };
         Thread th = new Thread(task);
         th.setDaemon(true);
         th.start();
+    }
+
+    private long tryUpdateGraphs(long timer)
+    {
+        int interval = 1000;
+        if(System.currentTimeMillis() - interval > timer) {
+            mon.updateHistory();
+            return System.currentTimeMillis();
+        }
+        return timer;
     }
 }

@@ -5,8 +5,10 @@ import javafx.scene.control.*;
 import tools.Logger;
 import tools.vision.Passes.PassBase;
 import tools.vision.Passes.PassGridOverlay;
+import tools.vision.Passes.SourceImageFile;
 import tools.vision.Treeable;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +19,21 @@ import java.util.Optional;
  */
 public class VisionRecManager {
 
+    public ArrayList<PassBase> getPasses() {
+        return passes;
+    }
+
+    public void setPasses(ArrayList<PassBase> passes) {
+        this.passes = passes;
+        controller.getVisionRecTreeView().getRoot().getChildren().clear();
+        for(PassBase p : passes)
+        {
+            p.setup(controller, passes);
+            controller.getVisionRecTreeView().getRoot().getChildren().add(p.getTreeItem());
+            Logger.logln("Loaded from file: " + p.getClass().getTypeName() + " (" + p.getNickname() + ")");
+        }
+    }
+
     private ArrayList<PassBase> passes;
 
     private ListView passCreatorSourcesView;
@@ -26,6 +43,10 @@ public class VisionRecManager {
     private Button addButton;
     private Button buttonRenamePass;
     private Controller controller;
+
+    public PassBase getCurrentlySelected() {
+        return currentlySelected;
+    }
 
     //Last selected PassBase to use for adding
     private PassBase currentlySelected;
@@ -71,6 +92,7 @@ public class VisionRecManager {
 
         //Source view setup
         this.passCreatorSourcesView = c.getPassCreatorSourcesView();
+        passCreatorSourcesView.getItems().add(new SourceImageFile(c, passes));
         //If clicked, save the last selected item.
         passCreatorSourcesView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (PassBase) newValue);

@@ -5,10 +5,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import org.opencv.core.Mat;
+import tools.Logger;
 import tools.vision.Treeable;
 import tools.vision.properties.PropertyChildren;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -18,23 +20,35 @@ import java.util.List;
  * <p>
  * Almost all passes should be able to return a preview image, too.
  */
-public abstract class PassBase extends Treeable {
+public abstract class PassBase extends Treeable implements Serializable {
 
-    protected Image lastPreviewImage;
     protected PropertyChildren children;
-    private ImageView view;
+    protected transient static ImageView view;
 
+    public void updateView()
+    {
+        view.setImage(getPreviewImage());
+    }
 
     public PassBase(Controller c, List<PassBase> passes) {
         super();
 
-        File file = new File("res/frc5113logo.png");
-        lastPreviewImage = new Image(file.toURI().toString());
+        setNicknameNumbered("Generic Property Base", passes);
 
         view = new ImageView();
-        view.setImage(getPreviewImage());
 
         children = new PropertyChildren(this, passes);
+
+        setup(c, passes);
+
+    }
+
+    public void setup(Controller c, List<PassBase> passes)
+    {
+        //This is like a second constructor, sort of:
+        //The constructor with parameters is not called when using serialization
+        //Therefore, use the constructor to add things normally, and the setup() method to add things in the loading
+        children.setup();
         getTreeItem().getChildren().add(children.getTreeItem());
     }
 
@@ -76,9 +90,7 @@ public abstract class PassBase extends Treeable {
 
     public abstract void process(Mat mat);
 
-    public Image getPreviewImage() {
-        return lastPreviewImage;
-    }
+    public abstract Image getPreviewImage();
 
     @Override
     public void createSettingsPanel(Pane p) {

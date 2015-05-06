@@ -2,6 +2,7 @@ package tools.vision.properties;
 
 import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 /**
  * Created by Jake on 4/27/2015.
@@ -21,10 +22,12 @@ public class PropertyColor extends PropertyBase {
     private double s = 1;
     private double v = 1;
 
-    private ColorPicker picker;
+    private transient ColorPicker picker;
 
-    public PropertyColor() {
+    public void setup()
+    {
         picker = new ColorPicker();
+        picker.setValue(new Color(r, g, b, a));
 
         picker.valueProperty().addListener((observable, oldValue, newValue) -> {
             try {
