@@ -1,14 +1,18 @@
 package gui;
 
 import javafx.scene.control.*;
+import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
 import tools.vision.passes.drawing.PassGridOverlay;
+import tools.vision.passes.sources.SourceComputerCam;
 import tools.vision.passes.sources.SourceImageFile;
 import tools.vision.Treeable;
 
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -42,14 +46,15 @@ public class VisionRecManager {
     private Button buttonRenamePass;
     private Controller controller;
 
-    public PassBase getCurrentlySelected() {
+    public String getCurrentlySelected() {
         return currentlySelected;
     }
 
     //Last selected PassBase to use for adding
-    private PassBase currentlySelected;
+    private String currentlySelected;
 
     public VisionRecManager(Controller c) {
+
 
         buttonRenamePass = c.getButtonRenamePass();
         setupRenameButton();
@@ -62,44 +67,52 @@ public class VisionRecManager {
         this.addButton = c.getButtonCreateNewPass();
         //If button is clicked, get the last selected item from the accordion menus
         addButton.setOnAction(event -> {
+
             try {
-                if (currentlySelected instanceof PassBase) {
-                    PassBase copyOfSelected;
-                    copyOfSelected = currentlySelected.getClass().getDeclaredConstructor(new Class[]{Controller.class, List.class}).newInstance(c, passes);
-                    passes.add(copyOfSelected);
-                    c.getVisionRecTreeView().getRoot().getChildren().add(copyOfSelected.getTreeItem());
-                    Logger.logln("Created new pass : " + copyOfSelected);
-                }
+                Class<?> classTemp = Class.forName(currentlySelected);
+
+
+                Class[] parameterTypes = {Controller.class, List.class};
+                Constructor constructor = classTemp.getConstructor(parameterTypes);
+
+                Object instance = constructor.newInstance(c, passes);
+
+                passes.add((PassBase) instance);
+                c.getVisionRecTreeView().getRoot().getChildren().add(((PassBase) instance).getTreeItem());
+                Logger.logln("Created new pass : " + instance + " ( " + instance.getClass().getTypeName() + " )");
+
             } catch (Exception e) {
-                e.printStackTrace();
+                Logger.logln(e.toString());
             }
+
         });
 
         //Debug view setup
         this.passCreatorDebugView = c.getPassCreatorDebugView();
-        passCreatorDebugView.getItems().add(new PassGridOverlay(c, passes));
+        passCreatorDebugView.getItems().add("tools.vision.passes.drawing.PassGridOverlay");
         //If clicked, save the last selected item.
         passCreatorDebugView.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> currentlySelected = (PassBase) newValue);
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Formatting view setup
         this.passCreatorFormattingView = c.getPassCreatorFormattingView();
         //If clicked, save the last selected item.
         passCreatorFormattingView.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> currentlySelected = (PassBase) newValue);
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Source view setup
         this.passCreatorSourcesView = c.getPassCreatorSourcesView();
-        passCreatorSourcesView.getItems().add(new SourceImageFile(c, passes));
+        passCreatorSourcesView.getItems().add("tools.vision.passes.sources.SourceComputerCam");
+        passCreatorSourcesView.getItems().add("tools.vision.passes.sources.SourceImageFile");
         //If clicked, save the last selected item.
         passCreatorSourcesView.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> currentlySelected = (PassBase) newValue);
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Imgproc view setup
         this.passCreatorImgprocView = c.getPassCreatorImgprocView();
         //If clicked, save the last selected item.
         passCreatorImgprocView.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> currentlySelected = (PassBase) newValue);
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
     }
 

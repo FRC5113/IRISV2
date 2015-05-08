@@ -49,7 +49,7 @@
                                                         <Label fx:id="vrUptimeClock" text="Uptime TODO" />
                                                     </items>
                                                 </ToolBar>
-                                                <SplitPane dividerPositions="0.3434038267875126" layoutX="2.0" layoutY="41.0" prefHeight="752.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                                                <SplitPane dividerPositions="0.40986908358509566" layoutX="2.0" layoutY="41.0" prefHeight="752.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                                                     <items>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                             <children>
@@ -72,11 +72,20 @@
                                                                             <children>
                                                                                 <Accordion layoutX="-2.0" layoutY="23.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                                     <panes>
-                                                                                        <TitledPane animated="false" text="Sources">
+                                                                                        <TitledPane animated="false" text="Image Source">
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
                                                                                                         <ListView fx:id="passCreatorSourcesView" layoutX="-42.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                    </children>
+                                                                                                </AnchorPane>
+                                                                                            </content>
+                                                                                        </TitledPane>
+                                                                                        <TitledPane animated="false" text="Processing">
+                                                                                            <content>
+                                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                                                    <children>
+                                                                                                        <ListView fx:id="passCreatorImgprocView" layoutX="-2.0" layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
@@ -90,7 +99,7 @@
                                                                                                 </AnchorPane>
                                                                                             </content>
                                                                                         </TitledPane>
-                                                                                        <TitledPane animated="false" text="Debug">
+                                                                                        <TitledPane animated="false" text="Drawing">
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
@@ -99,15 +108,15 @@
                                                                                                 </AnchorPane>
                                                                                             </content>
                                                                                         </TitledPane>
-                                                                                        <TitledPane animated="false" text="ImgProc">
-                                                                                            <content>
-                                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                                                    <children>
-                                                                                                        <ListView fx:id="passCreatorImgprocView" layoutX="-2.0" layoutY="37.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                                                    </children>
-                                                                                                </AnchorPane>
-                                                                                            </content>
-                                                                                        </TitledPane>
+                                                                  <TitledPane animated="false" text="Debug/Analysis">
+                                                                     <content>
+                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <ListView fx:id="passCreatorDebugView1" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                     </content>
+                                                                  </TitledPane>
                                                                                     </panes>
                                                                                 </Accordion>
                                                                                 <ToolBar layoutY="339.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

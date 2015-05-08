@@ -1,9 +1,12 @@
 package tools.vision;
 
+import gui.Controller;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 /**
  * Created by Jake on 4/27/2015.

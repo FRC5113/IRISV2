@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.stage.Stage;
+import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
 
@@ -30,6 +31,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gui.fxml"));
 
@@ -64,11 +68,11 @@ public class Main extends Application {
 
                     //Non FX stuff goes here (Img processing mostly)
 
-                    graphTimer = tryUpdateGraphs(graphTimer);
+                    //graphTimer = tryUpdateGraphs(graphTimer);
 
                     Platform.runLater(() -> {
                         //FX Stuff goes here
-                        mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
+                        //mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
                         controller.update();
 
                         //Set the displayed pass's view to be updated as much as possible

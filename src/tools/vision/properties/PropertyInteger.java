@@ -18,6 +18,11 @@ public class PropertyInteger extends PropertyBase {
         super();
     }
 
+    public int getValue()
+    {
+        return value;
+    }
+
     public void setup()
     {
         field = new TextField("" + value);

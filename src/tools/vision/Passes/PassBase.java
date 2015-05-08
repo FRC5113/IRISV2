@@ -3,11 +3,17 @@ package tools.vision.passes;
 import gui.Controller;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
 import tools.vision.Treeable;
 import tools.vision.properties.PropertyChildren;
 
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,7 +44,6 @@ public abstract class PassBase extends Treeable implements Serializable {
         children = new PropertyChildren(this, passes);
 
         setup(c, passes);
-
     }
 
     public void setup(Controller c, List<PassBase> passes)
@@ -94,6 +99,24 @@ public abstract class PassBase extends Treeable implements Serializable {
     public void createSettingsPanel(Pane p) {
         p.getChildren().clear();
         p.getChildren().add(view);
+    }
+
+    public static Image mat2Img(Mat mat)
+    {
+        //Shamelessly stolen from some stackoverflow page
+        MatOfByte byteMat = new MatOfByte();
+        org.opencv.imgcodecs.Imgcodecs.imencode(".bmp", mat, byteMat);
+
+        return new Image(new ByteArrayInputStream(byteMat.toArray()));
+    }
+
+    public static Mat img2Mat(BufferedImage image)
+    {
+        byte[] data = ((DataBufferByte) image.getRaster().getDataBuffer())
+                .getData();
+        Mat mat = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
+        mat.put(0, 0, data);
+        return mat;
     }
 
 }

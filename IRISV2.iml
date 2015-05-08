@@ -13,6 +13,9 @@
           <root url="jar://$MODULE_DIR$/lib/opencv-300.jar!/" />
         </CLASSES>
         <JAVADOC />
+        <NATIVE>
+          <root url="file://$MODULE_DIR$/lib/natives/x64" />
+        </NATIVE>
         <SOURCES>
           <root url="jar://$MODULE_DIR$/lib/opencv-300.jar!/" />
         </SOURCES>

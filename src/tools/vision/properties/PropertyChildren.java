@@ -41,6 +41,11 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
         setup();
     }
 
+    public List<PassBase> getValue()
+    {
+        return childrenPassesSerialized;
+    }
+
     public void setup()
     {
         if(passes != null)
