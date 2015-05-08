@@ -97,7 +97,9 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     public Image getPreviewImage()
     {
-        return mat2Img(preview);
+        if(preview != null)
+            return mat2Img(preview);
+        else return mat2Img(new Mat());
     }
 
     @Override

@@ -83,19 +83,17 @@ public class PassGridOverlay extends PassBase implements Serializable {
     @Override
     public void process(Mat mat) {
 
-        Logger.log("hi");
-
         for(int x = 0; x < mat.width(); x += gridSpacingX.getValue())
         {
             Imgproc.line(mat, new Point(x + gridOffsetX.getValue(), 0), new Point(x + gridOffsetX.getValue(), mat.height()),
-                    new Scalar(gridColor.getB() * 255, gridColor.getG()* 255, gridColor.getR()* 255),
+                    new Scalar(gridColor.getB(), gridColor.getG(), gridColor.getR()),
                     gridWidth.getValue());
         }
 
         for(int y = 0; y < mat.height(); y += gridSpacingY.getValue())
         {
             Imgproc.line(mat, new Point(0, y + gridOffsetY.getValue()), new Point(mat.width(), y + gridOffsetY.getValue()),
-                    new Scalar(gridColor.getB()* 255, gridColor.getG()* 255, gridColor.getR()* 255),
+                    new Scalar(gridColor.getB(), gridColor.getG(), gridColor.getR()),
                     gridWidth.getValue());
         }
 

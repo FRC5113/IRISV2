@@ -58,7 +58,7 @@ public class SourceComputerCam extends SourceBase {
         {
             Mat temp = new Mat();
             boolean successful = cvCam.read(temp);
-            if(successful)
+            if(successful && temp != null)
             {
                 preview = temp.clone();
                 for(PassBase p : children.getValue())

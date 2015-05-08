@@ -48,9 +48,6 @@ public class PropertyInteger extends PropertyBase {
     @Override
     public void createSettingsPanel(Pane p) {
         p.getChildren().clear();
-        Logger.logln(p.toString());
-        Logger.logln(p.getChildren().toString());
-        Logger.logln("" + (field == null));
         p.getChildren().add(field);
     }
 

@@ -18,31 +18,31 @@ public class PropertyColor extends PropertyBase {
     private double a = 255;
 
     public double getV() {
-        return v;
+        return v * 255;
     }
 
     public double getS() {
-        return s;
+        return s * 255;
     }
 
     public double getH() {
-        return h;
+        return h* 255;
     }
 
     public double getA() {
-        return a;
+        return a* 255;
     }
 
     public double getB() {
-        return b;
+        return b * 255;
     }
 
     public double getG() {
-        return g;
+        return g * 255;
     }
 
     public double getR() {
-        return r;
+        return r * 255;
     }
 
     //Hue, Saturation, Brightness/Value

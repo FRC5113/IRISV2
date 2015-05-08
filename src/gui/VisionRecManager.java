@@ -134,6 +134,7 @@ public class VisionRecManager {
 
         //Imgproc view setup
         this.passCreatorImgprocView = c.getPassCreatorImgprocView();
+        passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassColorThreshold");
         //If clicked, save the last selected item.
         passCreatorImgprocView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
