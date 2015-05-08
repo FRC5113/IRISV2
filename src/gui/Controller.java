@@ -71,10 +71,28 @@ public class Controller {
     private Label vrUptimeClock;
     //Allows the VR system to keep all current data, but will not process more ticks automatically.
     @FXML
-    private Button vrPauseButton;
+    private ToggleButton vrPauseButton;
+
+    public Button getVrTickButton() {
+        return vrTickButton;
+    }
+
+    public ToggleButton getVrPauseButton() {
+        return vrPauseButton;
+    }
+
+    public Label getVrUptimeClock() {
+        return vrUptimeClock;
+    }
+
     //While paused or stopped, forces the system to process one more tick.
     @FXML
     private Button vrTickButton;
+
+    public ToggleButton getVrStartStopToggle() {
+        return vrStartStopToggle;
+    }
+
     //Starts/Stops automatic processing
     @FXML
     private ToggleButton vrStartStopToggle;

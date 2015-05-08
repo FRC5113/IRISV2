@@ -29,6 +29,8 @@ public abstract class PassBase extends Treeable implements Serializable {
     protected PropertyChildren children;
     protected transient static ImageView view;
 
+    protected transient Mat preview;
+
     public void updateView()
     {
         view.setImage(getPreviewImage());
@@ -93,7 +95,10 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     public abstract void process(Mat mat);
 
-    public abstract Image getPreviewImage();
+    public Image getPreviewImage()
+    {
+        return mat2Img(preview);
+    }
 
     @Override
     public void createSettingsPanel(Pane p) {

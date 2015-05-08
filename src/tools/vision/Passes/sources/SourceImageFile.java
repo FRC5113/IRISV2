@@ -16,9 +16,8 @@ import java.util.List;
  * Draws a grid over top of a material image
  * Loads an image from a file
  */
-public class SourceImageFile extends PassBase implements Serializable {
+public class SourceImageFile extends SourceBase {
 
-    public PropertyInteger framerate;
     public PropertyImageFile imageFile;
 
     public SourceImageFile(Controller c, List<PassBase> passes) {
@@ -26,10 +25,6 @@ public class SourceImageFile extends PassBase implements Serializable {
         super(c, passes);
 
         setNicknameNumbered("Source Image File", passes);
-
-        framerate = new PropertyInteger(30);
-        framerate.setNickname("Goal framerate");
-        getTreeItem().getChildren().add(framerate.getTreeItem());
 
         imageFile = new PropertyImageFile();
         imageFile.setNickname("File selection");

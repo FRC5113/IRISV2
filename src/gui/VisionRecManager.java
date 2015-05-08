@@ -25,6 +25,11 @@ public class VisionRecManager {
         return passes;
     }
 
+    public boolean running = false;
+    public boolean paused = false;
+    public boolean flagTick = false;
+    public long startTime = System.currentTimeMillis();
+
     public void setPasses(ArrayList<PassBase> passes) {
         this.passes = passes;
         controller.getVisionRecTreeView().getRoot().getChildren().clear();
@@ -46,14 +51,33 @@ public class VisionRecManager {
     private Button buttonRenamePass;
     private Controller controller;
 
-    public String getCurrentlySelected() {
-        return currentlySelected;
-    }
-
     //Last selected PassBase to use for adding
     private String currentlySelected;
 
     public VisionRecManager(Controller c) {
+
+        ToggleButton startStop = c.getVrStartStopToggle();
+        startStop.setOnAction(event1 -> {
+            running = startStop.selectedProperty().getValue();
+            if(running)
+            {
+                startTime = System.currentTimeMillis();
+                c.getVrTickButton().setDisable(false);
+                c.getVrPauseButton().setDisable(false);
+            }
+            else
+            {
+                paused = false;
+                c.getVrTickButton().setDisable(true);
+                c.getVrPauseButton().setDisable(true);
+            }
+        });
+
+        Button tickButton = c.getVrTickButton();
+        tickButton.setOnAction(event2 -> flagTick = true);
+
+        ToggleButton pauseButton = c.getVrPauseButton();
+        pauseButton.setOnAction(event3 -> paused = pauseButton.selectedProperty().getValue());
 
 
         buttonRenamePass = c.getButtonRenamePass();

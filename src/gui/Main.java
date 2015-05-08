@@ -3,14 +3,17 @@ package gui;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
+import tools.vision.passes.sources.SourceBase;
 
 /*
 This tool is used for vision recognition, as well as general computer and robot monitoring.
@@ -24,6 +27,11 @@ public class Main extends Application {
     ResourceMonitor mon;
 
     VisionRecManager vrMan;
+
+    Thread processThread;
+    Thread fxThread;
+
+    boolean quit = false;
 
     public static void main(String[] args) {
         launch(args);
@@ -40,10 +48,14 @@ public class Main extends Application {
         controller = new Controller();
         loader.setController(controller);
 
+
         Parent root = loader.load();
         primaryStage.setTitle("FRC 5113 - IRIS Vision Recognition and Robot Monitoring Systems [Version 2.0.0b]");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest(we ->
+                quit = true);
 
         //Setup individual components
         controller.setup();
@@ -55,8 +67,6 @@ public class Main extends Application {
 
         Logger.logln("Started program!");
 
-
-
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
@@ -64,16 +74,21 @@ public class Main extends Application {
                 long graphTimer = System.currentTimeMillis();
                 long sleepTimer = System.currentTimeMillis();
 
-                while (true) {
+                while (!quit) {
 
                     //Non FX stuff goes here (Img processing mostly)
 
-                    //graphTimer = tryUpdateGraphs(graphTimer);
+                    graphTimer = tryUpdateGraphs(graphTimer);
 
                     Platform.runLater(() -> {
                         //FX Stuff goes here
-                        //mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
+
+                        mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
                         controller.update();
+
+                        if(vrMan.running && !vrMan.paused) {
+                            controller.getVrUptimeClock().setText("" + (System.currentTimeMillis() - vrMan.startTime) / 1000f);
+                        }
 
                         //Set the displayed pass's view to be updated as much as possible
                         TreeItem selectedItem = (TreeItem) controller.getVisionRecTreeView().getSelectionModel().getSelectedItem();
@@ -94,17 +109,49 @@ public class Main extends Application {
                     else
                     {
                         try {
-                            Thread.sleep(100);
+                            Thread.sleep(50);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                 }
+                return null;
             }
         };
-        Thread th = new Thread(task);
-        th.setDaemon(true);
-        th.start();
+        fxThread = new Thread(task);
+        fxThread.setDaemon(true);
+        fxThread.start();
+
+        //Thread responsible for doing the actual pass math
+        processThread = new Thread(){
+            public void run(){
+                while (!quit) {
+                    boolean allowTick = false;
+                    if(vrMan.running && !vrMan.paused)
+                        allowTick = true;
+                    else if(vrMan.running && vrMan.paused && vrMan.flagTick)
+                        allowTick = true;
+
+                    //System.out.println(allowTick);
+                    if(allowTick)
+                    {
+                        //System.out.println("Processing...");
+
+                        vrMan.getPasses().stream().filter(b -> b instanceof SourceBase).forEach(b -> ((SourceBase) b).runSourceProcess());
+                        vrMan.flagTick = false;
+                    }
+
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+
+        processThread.setDaemon(true);
+        processThread.start();
     }
 
     private long tryUpdateGraphs(long timer)

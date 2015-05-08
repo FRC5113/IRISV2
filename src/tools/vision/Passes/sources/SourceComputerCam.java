@@ -4,6 +4,7 @@ import gui.Controller;
 import javafx.scene.image.Image;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
+import tools.Logger;
 import tools.vision.passes.PassBase;
 import tools.vision.properties.PropertyInteger;
 
@@ -13,10 +14,9 @@ import java.util.List;
  * Created by Jake on 4/26/2015.
  * Returns an image taken from a computer's webcam
  */
-public class SourceComputerCam extends PassBase {
+public class SourceComputerCam extends SourceBase {
 
     private transient VideoCapture cvCam;
-    private transient Mat lastCapturedMat;
     private PropertyInteger cameraID;
 
     public SourceComputerCam(Controller c, List<PassBase> passes) {
@@ -37,7 +37,7 @@ public class SourceComputerCam extends PassBase {
         }
         catch (Exception e)
         {
-
+            Logger.logln("Warning, camera not accessible");
         }
 
         if(cameraID != null)
@@ -52,29 +52,30 @@ public class SourceComputerCam extends PassBase {
 
 
     @Override
-    public void process(Mat mat) {
-
-    }
-
-    @Override
-    public Image getPreviewImage() {
-        if (cvCam != null)
+    public void process(Mat mat)
+    {
+        if (cvCam != null && cvCam.isOpened())
         {
             Mat temp = new Mat();
             boolean successful = cvCam.read(temp);
             if(successful)
             {
-                lastCapturedMat = temp.clone();
-
+                preview = temp.clone();
                 for(PassBase p : children.getValue())
                 {
                     p.process(temp.clone());
                 }
             }
         }
+        else
+        {
+            Logger.logln("Warning, camera not accessible");
+        }
+    }
 
-
-        return mat2Img(lastCapturedMat);
-
+    @Override
+    public Image getPreviewImage()
+    {
+        return mat2Img(preview);
     }
 }

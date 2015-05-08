@@ -43,10 +43,10 @@
                                             <children>
                                                 <ToolBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                     <items>
-                                                        <ToggleButton fx:id="vrStartStopToggle" mnemonicParsing="false" text="Start/Stop TODO" />
-                                                        <Button fx:id="vrPauseButton" mnemonicParsing="false" text="Pause TODO" />
-                                                        <Button fx:id="vrTickButton" mnemonicParsing="false" text="Tick TODO" />
-                                                        <Label fx:id="vrUptimeClock" text="Uptime TODO" />
+                                                        <ToggleButton fx:id="vrStartStopToggle" mnemonicParsing="false" text="Start/Stop" />
+                                          <ToggleButton fx:id="vrPauseButton" disable="true" mnemonicParsing="false" text="Pause" />
+                                                        <Button fx:id="vrTickButton" disable="true" mnemonicParsing="false" text="Tick" />
+                                                        <Label fx:id="vrUptimeClock" text="Uptime" />
                                                     </items>
                                                 </ToolBar>
                                                 <SplitPane dividerPositions="0.40986908358509566" layoutX="2.0" layoutY="41.0" prefHeight="752.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">

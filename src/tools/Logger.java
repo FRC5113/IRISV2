@@ -11,7 +11,7 @@ public class Logger {
 
     private static TextArea textArea;
     private static String text = "";
-    private static int maxLength = 10000;
+    private static final int maxLength = 10000;
     private static CheckBox autoScrollCheckbox;
 
     public static void setTextArea(TextArea textAreas, CheckBox box) {

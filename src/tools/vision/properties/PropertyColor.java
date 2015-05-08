@@ -10,12 +10,40 @@ import javafx.scene.paint.Color;
 public class PropertyColor extends PropertyBase {
 
     //Red, Green, Blue
-    private double r = 1;
-    private double g = 1;
-    private double b = 1;
+    private double r = 255;
+    private double g = 255;
+    private double b = 255;
 
     //Alpha/Opacity
-    private double a = 1;
+    private double a = 255;
+
+    public double getV() {
+        return v;
+    }
+
+    public double getS() {
+        return s;
+    }
+
+    public double getH() {
+        return h;
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public double getG() {
+        return g;
+    }
+
+    public double getR() {
+        return r;
+    }
 
     //Hue, Saturation, Brightness/Value
     private double h = 1;
