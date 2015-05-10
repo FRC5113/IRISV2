@@ -103,7 +103,7 @@
                                                                                             <content>
                                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                                                     <children>
-                                                                                                        <ListView fx:id="passCreatorDebugView" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                        <ListView fx:id="passCreatorDrawingView" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                     </children>
                                                                                                 </AnchorPane>
                                                                                             </content>
@@ -112,7 +112,7 @@
                                                                      <content>
                                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                            <children>
-                                                                              <ListView fx:id="passCreatorDebugView1" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                              <ListView fx:id="passCreatorDebugView" layoutX="-10.0" layoutY="7.0" prefHeight="273.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                            </children>
                                                                         </AnchorPane>
                                                                      </content>
@@ -132,7 +132,36 @@
                                                         </AnchorPane>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="946.0">
                                                             <children>
-                                                                <Pane fx:id="vrPropertySettings" layoutX="125.0" layoutY="29.0" prefHeight="754.0" prefWidth="649.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <content>
+                                                                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="1024.0" prefWidth="1024.0">
+                                                                     <children>
+                                                                        <Pane fx:id="vrPassPreview" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="1024.0" minWidth="1024.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                                     <children>
+                                                                                        <Pane fx:id="vrPropertySettings" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="600.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </items>
+                                                </SplitPane>
                                                             </children>
                                                         </AnchorPane>
                                                     </items>

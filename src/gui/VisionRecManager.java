@@ -1,18 +1,13 @@
 package gui;
 
 import javafx.scene.control.*;
-import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
-import tools.vision.passes.drawing.PassGridOverlay;
-import tools.vision.passes.sources.SourceComputerCam;
-import tools.vision.passes.sources.SourceImageFile;
 import tools.vision.Treeable;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -46,6 +41,7 @@ public class VisionRecManager {
     private ListView passCreatorSourcesView;
     private ListView passCreatorFormattingView;
     private ListView passCreatorImgprocView;
+    private ListView passCreatorDrawingView;
     private ListView passCreatorDebugView;
     private Button addButton;
     private Button buttonRenamePass;
@@ -111,10 +107,18 @@ public class VisionRecManager {
 
         });
 
+        //Drawing view setup
+        this.passCreatorDrawingView = c.getPassCreatorDrawingView();
+        passCreatorDrawingView.getItems().add("tools.vision.passes.drawing.PassGridOverlay");
+        //If clicked, save the last selected item.
+        passCreatorDrawingView.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
+
+
+        //
         //Debug view setup
         this.passCreatorDebugView = c.getPassCreatorDebugView();
-        passCreatorDebugView.getItems().add("tools.vision.passes.drawing.PassGridOverlay");
-        //If clicked, save the last selected item.
+        passCreatorDebugView.getItems().add("tools.vision.passes.debug.PassHistogram");        //If clicked, save the last selected item.
         passCreatorDebugView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 

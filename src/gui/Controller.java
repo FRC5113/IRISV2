@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import tools.Logger;
 import tools.vision.Treeable;
+import tools.vision.passes.PassBase;
+import tools.vision.properties.PropertyBase;
 
 import java.util.Optional;
 
@@ -52,9 +54,12 @@ public class Controller {
     //Tree containing every pass and their properties
     @FXML
     private TreeView visionRecTreeView;
-    //The area in which each individual property creates its settings, or where passes draw their preview image.
+    //The area in which each individual property creates its settings
     @FXML
     private Pane vrPropertySettings;
+    //where passes draw their preview image.
+    @FXML
+    private Pane vrPassPreview;
     //The following list views hold potential yet uncreated types of passes
     @FXML
     private ListView passCreatorSourcesView;
@@ -64,6 +69,13 @@ public class Controller {
     private ListView passCreatorImgprocView;
     @FXML
     private ListView passCreatorDebugView;
+
+    public ListView getPassCreatorDrawingView() {
+        return passCreatorDrawingView;
+    }
+
+    @FXML
+    private ListView passCreatorDrawingView;
     @FXML
     private Button buttonCreateNewPass;
     //Label used to display the amount of time that VR has been running for
@@ -131,8 +143,12 @@ public class Controller {
                 (observable, oldValue, newValue) -> {
                     TreeItem selectedItem = (TreeItem) newValue;
                     try {
-                        if (selectedItem.getValue() != null && selectedItem.getValue() instanceof Treeable) {
+                        if (selectedItem.getValue() != null && selectedItem.getValue() instanceof PropertyBase) {
                             ((Treeable) selectedItem.getValue()).createSettingsPanel(vrPropertySettings);
+                            ((Treeable) selectedItem.getParent().getValue()).createSettingsPanel(vrPassPreview);
+                        }
+                        else if (selectedItem.getValue() != null && selectedItem.getValue() instanceof PassBase) {
+                            ((Treeable) selectedItem.getValue()).createSettingsPanel(vrPassPreview);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

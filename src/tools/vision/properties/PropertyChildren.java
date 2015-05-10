@@ -74,15 +74,17 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
 
 
             unAddedLabel = new Label("Unadded Passes");
-            unAddedLabel.setLayoutY(250);
+            unAddedLabel.setLayoutX(310);
 
             unAddedListView = new ListView<PassBase>();
-            unAddedListView.setLayoutY(270);
+            unAddedListView.setLayoutX(310);
+            unAddedListView.setLayoutY(20);
             unAddedListView.setMaxHeight(180);
             unAddedListView.setMaxWidth(300);
 
             addButton = new Button("Add selected pass to children");
-            addButton.setLayoutY(470);
+            addButton.setLayoutX(310);
+            addButton.setLayoutY(210);
 
             //On click, remove one item from the unadded list and add it to children
             addButton.setOnAction(event -> {

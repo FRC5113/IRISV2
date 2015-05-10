@@ -14,6 +14,7 @@ import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
 import tools.vision.passes.sources.SourceBase;
+import tools.vision.properties.PropertyBase;
 
 /*
 This tool is used for vision recognition, as well as general computer and robot monitoring.
@@ -96,9 +97,13 @@ public class Main extends Application {
                         //Set the displayed pass's view to be updated as much as possible
                         TreeItem selectedItem = (TreeItem) controller.getVisionRecTreeView().getSelectionModel().getSelectedItem();
                         try {
-                            if (selectedItem != null && selectedItem.getValue() != null && selectedItem.getValue() instanceof PassBase) {
-                                ((PassBase) selectedItem.getValue()).updateView();
+                            if (selectedItem != null && selectedItem.getValue() != null) {
+                                if(selectedItem.getValue() instanceof PassBase)
+                                    ((PassBase) selectedItem.getValue()).updateView();
+                                else if(selectedItem.getValue() instanceof PropertyBase)
+                                    ((PassBase) selectedItem.getParent().getValue()).updateView();
                             }
+
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
