@@ -120,6 +120,7 @@ public class VisionRecManager {
 
         //Formatting view setup
         this.passCreatorFormattingView = c.getPassCreatorFormattingView();
+        passCreatorFormattingView.getItems().add("tools.vision.passes.formatting.PassImageFormatConverter");
         //If clicked, save the last selected item.
         passCreatorFormattingView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
@@ -135,6 +136,7 @@ public class VisionRecManager {
         //Imgproc view setup
         this.passCreatorImgprocView = c.getPassCreatorImgprocView();
         passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassColorThreshold");
+        passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassEdgeSobel");
         //If clicked, save the last selected item.
         passCreatorImgprocView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);

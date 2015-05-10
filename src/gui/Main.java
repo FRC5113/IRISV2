@@ -55,7 +55,10 @@ public class Main extends Application {
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(we ->
-                quit = true);
+        {
+            quit = true;
+            System.exit(0);
+        });
 
         //Setup individual components
         controller.setup();
