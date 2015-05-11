@@ -1,19 +1,14 @@
 package tools.vision.properties;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
-import tools.Logger;
+import org.opencv.core.Mat;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import java.net.URL;
 
 /**
  * Created by Jake on 4/27/2015.
@@ -24,6 +19,7 @@ public class PropertyImageFile extends PropertyBase {
     private transient TextField url;
     private transient Button select;
     private transient ImageView view;
+    private transient Mat mat;
 
     private transient Pane paneRef;
 

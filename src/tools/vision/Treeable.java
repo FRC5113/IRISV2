@@ -1,12 +1,9 @@
 package tools.vision;
 
-import gui.Controller;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * Created by Jake on 4/27/2015.
@@ -15,14 +12,14 @@ import java.util.List;
 public class Treeable implements Serializable {
 
     //Name to be displayed in tree view
-    public String nickname;
+    private String nickname;
     private transient TreeItem treeItem;
 
-    public Treeable() {
+    protected Treeable() {
         setup();
     }
 
-    public void setup()
+    protected void setup()
     {
     }
 

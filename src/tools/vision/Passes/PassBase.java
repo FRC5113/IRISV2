@@ -3,7 +3,6 @@ package tools.vision.passes;
 import gui.Controller;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -27,7 +26,7 @@ import java.util.List;
 public abstract class PassBase extends Treeable implements Serializable {
 
     protected PropertyChildren children;
-    protected transient static ImageView view;
+    private transient static ImageView view;
 
     protected transient Mat preview;
 
@@ -36,7 +35,7 @@ public abstract class PassBase extends Treeable implements Serializable {
         view.setImage(getPreviewImage());
     }
 
-    public PassBase(Controller c, List<PassBase> passes) {
+    protected PassBase(Controller c, List<PassBase> passes) {
         super();
 
         setNicknameNumbered("Generic Property Base", passes);
@@ -95,7 +94,7 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     public abstract void process(Mat mat);
 
-    public Image getPreviewImage()
+    protected Image getPreviewImage()
     {
         if(preview != null)
             return mat2Img(preview);
@@ -108,9 +107,9 @@ public abstract class PassBase extends Treeable implements Serializable {
         p.getChildren().add(view);
     }
 
-    public static Image mat2Img(Mat mat)
+    protected static Image mat2Img(Mat mat)
     {
-        //Shamelessly stolen from some stackoverflow page
+        //Shamelessly stolen from some stack overflow page
         MatOfByte byteMat = new MatOfByte();
         org.opencv.imgcodecs.Imgcodecs.imencode(".bmp", mat, byteMat);
 

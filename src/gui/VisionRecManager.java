@@ -14,7 +14,7 @@ import java.util.Optional;
  * Created by Jake on 4/27/2015.
  * Keeps track of passes, runs passes' logic, and removes/adds new passes
  */
-public class VisionRecManager {
+class VisionRecManager {
 
     public ArrayList<PassBase> getPasses() {
         return passes;
@@ -38,12 +38,6 @@ public class VisionRecManager {
 
     private ArrayList<PassBase> passes;
 
-    private ListView passCreatorSourcesView;
-    private ListView passCreatorFormattingView;
-    private ListView passCreatorImgprocView;
-    private ListView passCreatorDrawingView;
-    private ListView passCreatorDebugView;
-    private Button addButton;
     private Button buttonRenamePass;
     private Controller controller;
 
@@ -84,7 +78,7 @@ public class VisionRecManager {
         passes = new ArrayList<>(10);
 
         //Button setup
-        this.addButton = c.getButtonCreateNewPass();
+        Button addButton = c.getButtonCreateNewPass();
         //If button is clicked, get the last selected item from the accordion menus
         addButton.setOnAction(event -> {
 
@@ -108,7 +102,7 @@ public class VisionRecManager {
         });
 
         //Drawing view setup
-        this.passCreatorDrawingView = c.getPassCreatorDrawingView();
+        ListView passCreatorDrawingView = c.getPassCreatorDrawingView();
         passCreatorDrawingView.getItems().add("tools.vision.passes.drawing.PassGridOverlay");
         //If clicked, save the last selected item.
         passCreatorDrawingView.getSelectionModel().selectedItemProperty().addListener(
@@ -117,20 +111,20 @@ public class VisionRecManager {
 
         //
         //Debug view setup
-        this.passCreatorDebugView = c.getPassCreatorDebugView();
+        ListView passCreatorDebugView = c.getPassCreatorDebugView();
         passCreatorDebugView.getItems().add("tools.vision.passes.debug.PassHistogram");        //If clicked, save the last selected item.
         passCreatorDebugView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Formatting view setup
-        this.passCreatorFormattingView = c.getPassCreatorFormattingView();
+        ListView passCreatorFormattingView = c.getPassCreatorFormattingView();
         passCreatorFormattingView.getItems().add("tools.vision.passes.formatting.PassImageFormatConverter");
         //If clicked, save the last selected item.
         passCreatorFormattingView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Source view setup
-        this.passCreatorSourcesView = c.getPassCreatorSourcesView();
+        ListView passCreatorSourcesView = c.getPassCreatorSourcesView();
         passCreatorSourcesView.getItems().add("tools.vision.passes.sources.SourceComputerCam");
         passCreatorSourcesView.getItems().add("tools.vision.passes.sources.SourceImageFile");
         //If clicked, save the last selected item.
@@ -138,7 +132,7 @@ public class VisionRecManager {
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
         //Imgproc view setup
-        this.passCreatorImgprocView = c.getPassCreatorImgprocView();
+        ListView passCreatorImgprocView = c.getPassCreatorImgprocView();
         passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassColorThreshold");
         passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassEdgeSobel");
         //If clicked, save the last selected item.

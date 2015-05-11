@@ -11,7 +11,7 @@ import java.lang.management.ManagementFactory;
  * Created by Jake on 4/26/2015.
  * Manages the page for hardware resource usage, such as network bandwidth, CPU usage, RAM usage, etc.
  */
-public class ResourceMonitor {
+class ResourceMonitor {
 
     private OperatingSystemMXBean operatingSystemMXBean;
 

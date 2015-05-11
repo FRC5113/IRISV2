@@ -3,13 +3,11 @@ package gui;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.opencv.core.Core;
 import tools.Logger;
 import tools.vision.passes.PassBase;
@@ -23,16 +21,16 @@ Team 5113.
  */
 public class Main extends Application {
 
-    Controller controller;
+    private Controller controller;
 
-    ResourceMonitor mon;
+    private ResourceMonitor mon;
 
-    VisionRecManager vrMan;
+    private VisionRecManager vrMan;
 
-    Thread processThread;
-    Thread fxThread;
+    private Thread processThread;
+    private Thread fxThread;
 
-    boolean quit = false;
+    private boolean quit = false;
 
     public static void main(String[] args) {
         launch(args);
@@ -88,13 +86,12 @@ public class Main extends Application {
                         //FX Stuff goes here
 
                         mon.updateGraphs(controller.getResMonCompCPU(), controller.getResMonCompRAM());
-                        controller.update();
 
                         if(vrMan.running && !vrMan.paused) {
                             controller.getVrUptimeClock().setText("" + (System.currentTimeMillis() - vrMan.startTime) / 1000f);
                         }
 
-                        //Set the displayed pass's view to be updated as much as possible
+                        //Set the displayed pass' view to be updated as much as possible
                         TreeItem selectedItem = (TreeItem) controller.getVisionRecTreeView().getSelectionModel().getSelectedItem();
                         try {
                             if (selectedItem != null && selectedItem.getValue() != null) {

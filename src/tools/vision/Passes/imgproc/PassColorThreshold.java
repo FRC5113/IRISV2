@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class PassColorThreshold extends PassBase implements Serializable {
 
-    public PropertyDropdown colorChoice;
-    public PropertyColor colorLow;
-    public PropertyColor colorHigh;
+    private PropertyDropdown colorChoice;
+    private PropertyColor colorLow;
+    private PropertyColor colorHigh;
 
     public PassColorThreshold(Controller c, List<PassBase> passes) {
 

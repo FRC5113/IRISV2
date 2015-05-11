@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import tools.vision.passes.PassBase;
+import tools.vision.passes.sources.SourceBase;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
             childrenListView = new ListView<PassBase>();
             childrenListView.setLayoutY(20);
             childrenListView.setMaxHeight(180);
-            childrenListView.setMaxWidth(300);
+            childrenListView.setPrefWidth(200);
 
             removeButton = new Button("Remove selected pass from children");
             removeButton.setLayoutY(210);
@@ -74,16 +75,16 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
 
 
             unAddedLabel = new Label("Unadded Passes");
-            unAddedLabel.setLayoutX(310);
+            unAddedLabel.setLayoutX(220);
 
             unAddedListView = new ListView<PassBase>();
-            unAddedListView.setLayoutX(310);
+            unAddedListView.setLayoutX(220);
             unAddedListView.setLayoutY(20);
             unAddedListView.setMaxHeight(180);
-            unAddedListView.setMaxWidth(300);
+            unAddedListView.setPrefWidth(200);
 
             addButton = new Button("Add selected pass to children");
-            addButton.setLayoutX(310);
+            addButton.setLayoutX(220);
             addButton.setLayoutY(210);
 
             //On click, remove one item from the unadded list and add it to children
@@ -106,6 +107,8 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
         List<PassBase> unusedList = new ArrayList<>(passes);
         unusedList.removeAll(childrenPassesSerialized);
         unusedList.remove(parentPass);
+        unusedList.stream().filter(p -> p instanceof SourceBase).forEach(unusedList::remove);
+
         unused.addAll(unusedList);
 
         children.setAll(childrenPassesSerialized);

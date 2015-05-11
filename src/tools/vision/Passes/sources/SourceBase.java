@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class SourceBase extends PassBase {
 
-    public PropertyInteger framerate;
+    PropertyInteger framerate;
     private transient long lastFrameTime = System.currentTimeMillis();
 
-    public SourceBase(Controller c, List<PassBase> passes) {
+    SourceBase(Controller c, List<PassBase> passes) {
         super(c, passes);
 
         if(preview == null)

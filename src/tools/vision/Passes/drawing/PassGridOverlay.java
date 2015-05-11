@@ -1,12 +1,10 @@
 package tools.vision.passes.drawing;
 
 import gui.Controller;
-import javafx.scene.image.Image;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
-import tools.Logger;
 import tools.vision.passes.PassBase;
 import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyInteger;
@@ -22,12 +20,12 @@ import java.util.List;
  */
 public class PassGridOverlay extends PassBase implements Serializable {
 
-    public PropertyInteger gridSpacingX;
-    public PropertyInteger gridSpacingY;
-    public PropertyInteger gridOffsetX;
-    public PropertyInteger gridOffsetY;
-    public PropertyInteger gridWidth;
-    public PropertyColor gridColor;
+    private PropertyInteger gridSpacingX;
+    private PropertyInteger gridSpacingY;
+    private PropertyInteger gridOffsetX;
+    private PropertyInteger gridOffsetY;
+    private PropertyInteger gridWidth;
+    private PropertyColor gridColor;
 
     public PassGridOverlay(Controller c, List<PassBase> passes) {
 

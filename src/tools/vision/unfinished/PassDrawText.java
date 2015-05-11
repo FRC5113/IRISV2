@@ -5,5 +5,5 @@ package tools.vision.unfinished;
  * Overlays text on to the image.
  * Also has presets for fps, date/time, etc.
  */
-public class PassDrawText {
+class PassDrawText {
 }

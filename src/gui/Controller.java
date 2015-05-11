@@ -9,8 +9,6 @@ import tools.vision.Treeable;
 import tools.vision.passes.PassBase;
 import tools.vision.properties.PropertyBase;
 
-import java.util.Optional;
-
 /**
  * Created by Jake on 4/26/2015.
  * This class handles most of the interactions with the UI, and keeps track of its important components
@@ -156,9 +154,6 @@ public class Controller {
                 });
 
         Logger.setTextArea(logViewer, logViewerAutoScroll);
-    }
-
-    public void update() {
     }
 
     public TreeView getVisionRecTreeView() {

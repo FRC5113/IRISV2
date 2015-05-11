@@ -3,6 +3,7 @@ package tools.vision.properties;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import tools.Logger;
 
 /**
  * Created by Jake on 4/27/2015.
@@ -61,6 +62,7 @@ public class PropertyColor extends PropertyBase {
             try {
                 setValue();
             } catch (Exception e) {
+                Logger.logln(e.toString());
             }
         });
     }

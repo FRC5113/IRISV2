@@ -1,12 +1,9 @@
 package tools.vision.passes.formatting;
 
 import gui.Controller;
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
-import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 import tools.vision.passes.PassBase;
-import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyDropdown;
 
 import java.io.Serializable;
@@ -20,8 +17,8 @@ import java.util.List;
  */
 public class PassImageFormatConverter extends PassBase implements Serializable {
 
-    public PropertyDropdown typeFrom;
-    public PropertyDropdown typeTo;
+    private PropertyDropdown typeFrom;
+    private PropertyDropdown typeTo;
 
     public PassImageFormatConverter(Controller c, List<PassBase> passes) {
 

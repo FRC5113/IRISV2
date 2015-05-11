@@ -1,11 +1,7 @@
 package tools.vision.properties;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.Pane;
-import tools.Logger;
 
 /**
  * Created by Jake on 4/27/2015.
@@ -15,7 +11,7 @@ public class PropertyBool extends PropertyBase {
     private boolean value = false;
     private transient ToggleButton field;
 
-    public PropertyBool() {
+    private PropertyBool() {
         super();
     }
 

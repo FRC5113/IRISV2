@@ -5,9 +5,7 @@ import javafx.scene.image.Image;
 import org.opencv.core.Mat;
 import tools.vision.passes.PassBase;
 import tools.vision.properties.PropertyImageFile;
-import tools.vision.properties.PropertyInteger;
 
-import java.io.Serializable;
 import java.util.List;
 
 
@@ -18,7 +16,7 @@ import java.util.List;
  */
 public class SourceImageFile extends SourceBase {
 
-    public PropertyImageFile imageFile;
+    private PropertyImageFile imageFile;
 
     public SourceImageFile(Controller c, List<PassBase> passes) {
 

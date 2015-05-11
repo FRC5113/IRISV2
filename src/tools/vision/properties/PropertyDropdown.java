@@ -1,14 +1,8 @@
 package tools.vision.properties;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.Event;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import tools.Logger;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +15,7 @@ public class PropertyDropdown extends PropertyBase {
     private String chosen;
     private transient ComboBox<String> box;
 
-    public PropertyDropdown() {
+    private PropertyDropdown() {
         super();
     }
 
@@ -50,10 +44,8 @@ public class PropertyDropdown extends PropertyBase {
         chosen = potential[0];
         choices = Arrays.asList(potential);
 
-        if(choices != null) {
-            box.getItems().addAll(choices);
-            box.getSelectionModel().select(chosen);
-        }
+        box.getItems().addAll(choices);
+        box.getSelectionModel().select(chosen);
     }
 
     @Override

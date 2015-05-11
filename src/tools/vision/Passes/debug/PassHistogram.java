@@ -19,10 +19,10 @@ import java.util.List;
  */
 public class PassHistogram extends PassBase implements Serializable {
 
-    public PropertyInteger bins;
-    public PropertyBool enableBlue;
-    public PropertyBool enableGreen;
-    public PropertyBool enableRed;
+    private PropertyInteger bins;
+    private PropertyBool enableBlue;
+    private PropertyBool enableGreen;
+    private PropertyBool enableRed;
 
 
     public PassHistogram(Controller c, List<PassBase> passes) {
@@ -81,9 +81,6 @@ public class PassHistogram extends PassBase implements Serializable {
         MatOfFloat ranges=new MatOfFloat(0,256);
         MatOfInt histSize = new MatOfInt(bins.getValue());
 
-        boolean uniform = true;
-        boolean accumulate = false;
-
         Mat b_hist = new Mat();
         Mat g_hist = new Mat();
         Mat r_hist = new Mat();
@@ -98,9 +95,8 @@ public class PassHistogram extends PassBase implements Serializable {
 
         // Draw the histograms for B, G and R
         int hist_w = bins.getValue();
-        int hist_h = hist_w;
 
-        Mat histImage = new Mat( hist_h, hist_w, CvType.CV_8UC3, new Scalar( 200,200,200) );
+        Mat histImage = new Mat(hist_w, hist_w, CvType.CV_8UC3, new Scalar( 0,0,0) );
 
         /// Normalize the result to [ 0, histImage.rows ]
         if(enableBlue.getValue())
@@ -112,34 +108,34 @@ public class PassHistogram extends PassBase implements Serializable {
 
 
         /// Draw for each channel
-        for( int i = 1; i < bins.getValue(); i++ )
+        for( int i = 1; i < bins.getValue() - 1; i++ )
         {
             if(enableBlue.getValue())
 
             Imgproc.line(
                     histImage,
-                    new org.opencv.core.Point( i, histImage.rows() ),
-                    new org.opencv.core.Point( i, histImage.rows()-Math.round( b_hist.get(i,0)[0] )) ,
-                    new Scalar( 255, 0, 0),
-                    2);
+                    new org.opencv.core.Point(i, histImage.rows() - Math.round(b_hist.get(i, 0)[0])),
+                    new org.opencv.core.Point(i, histImage.rows() - Math.round(b_hist.get(i + 1, 0)[0])),
+                    new Scalar(255, 0, 0),
+                    1);
 
             if(enableGreen.getValue())
 
             Imgproc.line(
                     histImage,
-                    new org.opencv.core.Point( i, histImage.rows() ),
                     new org.opencv.core.Point( i, histImage.rows()-Math.round( g_hist.get(i,0)[0] )) ,
+                    new org.opencv.core.Point( i, histImage.rows()-Math.round( g_hist.get(i + 1,0)[0] )) ,
                     new Scalar( 0, 255, 0),
-                    2);
+                    1);
 
             if(enableRed.getValue())
 
             Imgproc.line(
                     histImage,
-                    new org.opencv.core.Point( i, histImage.rows() ),
                     new org.opencv.core.Point( i, histImage.rows()-Math.round( r_hist.get(i,0)[0] )) ,
+                    new org.opencv.core.Point( i, histImage.rows()-Math.round( r_hist.get(i + 1,0)[0] )) ,
                     new Scalar( 0, 0, 255),
-                    2);
+                    1);
 
         }
 

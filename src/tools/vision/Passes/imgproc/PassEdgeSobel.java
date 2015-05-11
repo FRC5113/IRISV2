@@ -1,14 +1,10 @@
 package tools.vision.passes.imgproc;
 
 import gui.Controller;
-import javafx.scene.image.Image;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
-import tools.Logger;
 import tools.vision.passes.PassBase;
-import tools.vision.properties.PropertyColor;
 import tools.vision.properties.PropertyDouble;
-import tools.vision.properties.PropertyInteger;
 
 import java.io.Serializable;
 import java.util.List;
@@ -21,8 +17,8 @@ import java.util.List;
  */
 public class PassEdgeSobel extends PassBase implements Serializable {
 
-    public PropertyDouble delta;
-    public PropertyDouble scale;
+    private PropertyDouble delta;
+    private PropertyDouble scale;
 
     public PassEdgeSobel(Controller c, List<PassBase> passes) {
 

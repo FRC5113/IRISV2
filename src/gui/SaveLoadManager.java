@@ -12,13 +12,12 @@ import java.util.Arrays;
 /**
  * Created by Jake on 5/4/2015.
  */
-public class SaveLoadManager {
+class SaveLoadManager {
 
     public static void save(VisionRecManager rec, Scene scene)
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save Resource File");
-        //fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.visionrec", "*.visionrec"));
         File file = fileChooser.showOpenDialog(scene.getWindow());
 
         try
@@ -40,7 +39,6 @@ public class SaveLoadManager {
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
-        //fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.visionrec", "*.visionrec"));
         File file = fileChooser.showOpenDialog(scene.getWindow());
 
         try

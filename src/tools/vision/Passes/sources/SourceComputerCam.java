@@ -58,7 +58,7 @@ public class SourceComputerCam extends SourceBase {
         {
             Mat temp = new Mat();
             boolean successful = cvCam.read(temp);
-            if(successful && temp != null)
+            if(successful)
             {
                 preview = temp.clone();
                 for(PassBase p : children.getValue())
@@ -69,7 +69,13 @@ public class SourceComputerCam extends SourceBase {
         }
         else
         {
-            Logger.logln("Warning, camera not accessible");
+            try {
+                cvCam = new VideoCapture(0);
+            }
+            catch (Exception e)
+            {
+                Logger.logln("Warning, camera not accessible. Retrying soon...");
+            }
         }
     }
 

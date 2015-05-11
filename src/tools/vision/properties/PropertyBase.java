@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 public abstract class PropertyBase extends Treeable implements Serializable  {
 
-    public PropertyBase() {
+    PropertyBase() {
         super();
     }
 

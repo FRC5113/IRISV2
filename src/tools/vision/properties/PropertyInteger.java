@@ -1,7 +1,5 @@
 package tools.vision.properties;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import tools.Logger;
@@ -14,7 +12,7 @@ public class PropertyInteger extends PropertyBase {
     private int value = 0;
     private transient TextField field;
 
-    public PropertyInteger() {
+    private PropertyInteger() {
         super();
     }
 
