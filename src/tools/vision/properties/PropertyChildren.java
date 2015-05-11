@@ -107,7 +107,13 @@ public class PropertyChildren extends PropertyBase  implements Serializable {
         List<PassBase> unusedList = new ArrayList<>(passes);
         unusedList.removeAll(childrenPassesSerialized);
         unusedList.remove(parentPass);
-        unusedList.stream().filter(p -> p instanceof SourceBase).forEach(unusedList::remove);
+        for(PassBase p : passes)
+        {
+            if(p instanceof SourceBase && unusedList.contains(p))
+            {
+                unusedList.remove(p);
+            }
+        }
 
         unused.addAll(unusedList);
 

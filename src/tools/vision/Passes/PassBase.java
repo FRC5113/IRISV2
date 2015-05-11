@@ -35,7 +35,7 @@ public abstract class PassBase extends Treeable implements Serializable {
         view.setImage(getPreviewImage());
     }
 
-    protected PassBase(Controller c, List<PassBase> passes) {
+    public PassBase(Controller c, List<PassBase> passes) {
         super();
 
         setNicknameNumbered("Generic Property Base", passes);
@@ -58,7 +58,7 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     //Similar to setNickname, but adds a number to the end if more than one pass exists already with that name.
     //For example, if there is already a "Grid Overlay" when you try to add one, it will call it "Grid Overlay 2" instead.
-    protected void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes) {
+    public void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes) {
         boolean taken = false;
         for (PassBase b : passes) {
             if (b.getNickname().equalsIgnoreCase(nicknameNumbered)) {
@@ -76,7 +76,7 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     //Similar to setNickname, but adds a number to the end if more than one pass exists already with that name.
     //For example, if there is already a "Grid Overlay" when you try to add one, it will call it "Grid Overlay 2" instead.
-    private void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes, int count) {
+    public void setNicknameNumbered(String nicknameNumbered, List<PassBase> passes, int count) {
         boolean taken = false;
         for (PassBase b : passes) {
             if (b.getNickname().equalsIgnoreCase(nicknameNumbered + " " + count)) {
@@ -94,7 +94,7 @@ public abstract class PassBase extends Treeable implements Serializable {
 
     public abstract void process(Mat mat);
 
-    protected Image getPreviewImage()
+    public Image getPreviewImage()
     {
         if(preview != null)
             return mat2Img(preview);
@@ -107,7 +107,7 @@ public abstract class PassBase extends Treeable implements Serializable {
         p.getChildren().add(view);
     }
 
-    protected static Image mat2Img(Mat mat)
+    public static Image mat2Img(Mat mat)
     {
         //Shamelessly stolen from some stack overflow page
         MatOfByte byteMat = new MatOfByte();
