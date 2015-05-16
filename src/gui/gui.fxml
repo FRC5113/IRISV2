@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1131.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -55,7 +57,7 @@
                                                                                 <TreeView fx:id="visionRecTreeView" layoutX="14.0" prefHeight="374.0" prefWidth="198.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                             <ToolBar layoutY="339.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                                               <items>
-                                                                <Button mnemonicParsing="false" text="Remove TODO" />
+                                                                <Button fx:id="buttonRemovePass" mnemonicParsing="false" text="Remove" />
                                                                   <Button fx:id="buttonRenamePass" mnemonicParsing="false" text="Rename" />
                                                                   <Button mnemonicParsing="false" text="Move up TODO" />
                                                                   <Button mnemonicParsing="false" text="Move down TODO" />

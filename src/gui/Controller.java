@@ -49,6 +49,14 @@ public class Controller {
     @FXML
     private Button buttonRenamePass;
 
+    public Button getButtonRemovePass() {
+        return buttonRemovePass;
+    }
+
+    //Removes a pass
+    @FXML
+    private Button buttonRemovePass;
+
     //Tree containing every pass and their properties
     @FXML
     private TreeView visionRecTreeView;

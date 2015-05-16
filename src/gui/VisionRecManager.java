@@ -39,6 +39,7 @@ class VisionRecManager {
     private ArrayList<PassBase> passes;
 
     private Button buttonRenamePass;
+    private Button buttonRemovePass;
     private Controller controller;
 
     //Last selected PassBase to use for adding
@@ -71,7 +72,9 @@ class VisionRecManager {
 
 
         buttonRenamePass = c.getButtonRenamePass();
+        buttonRemovePass = c.getButtonRemovePass();
         setupRenameButton();
+        setupRemoveButton();
 
         controller = c;
 
@@ -141,7 +144,38 @@ class VisionRecManager {
 
     }
 
+    private void setupRemoveButton()
+    {
+        buttonRemovePass.setOnAction(event -> {
 
+            Treeable selected = null;
+
+            for(PassBase b : passes)
+            {
+                if(b.getTreeItem() == controller.getVisionRecTreeView().getSelectionModel().getSelectedItem())
+                {
+                    selected = b;
+                    break;
+                }
+            }
+
+
+            if(selected != null)
+            {
+
+                String name = selected.getNickname();
+                Logger.logln("Removed " + name);
+
+                passes.remove(selected);
+                controller.getVisionRecTreeView().getRoot().getChildren().remove(selected.getTreeItem());
+                selected = null;
+
+                forceTreeViewRefresh(controller.getVisionRecTreeView());
+            }
+
+
+        });
+    }
 
     private void setupRenameButton()
     {
