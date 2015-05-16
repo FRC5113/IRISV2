@@ -138,6 +138,7 @@ class VisionRecManager {
         ListView passCreatorImgprocView = c.getPassCreatorImgprocView();
         passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassColorThreshold");
         passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassEdgeSobel");
+        passCreatorImgprocView.getItems().add("tools.vision.passes.imgproc.PassBlur");
         //If clicked, save the last selected item.
         passCreatorImgprocView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
