@@ -33,7 +33,7 @@ public class PassErode extends PassBase implements Serializable {
         getTreeItem().getChildren().add(size.getTreeItem());
 
         erosionType = new PropertyDropdown(new String[] {"Rect", "Cross", "Ellipse"});
-        erosionType.setNickname("Erosion type");
+        erosionType.setNickname("Structure type");
         getTreeItem().getChildren().add(erosionType.getTreeItem());
 
     }
