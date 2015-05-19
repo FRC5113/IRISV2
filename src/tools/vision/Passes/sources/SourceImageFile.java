@@ -45,7 +45,7 @@ public class SourceImageFile extends SourceBase {
     @Override
     public void process(Mat mat) {
 
-        //preview = img2Mat(imageFile.getValue());
+        preview = imageFile.getValue();
 
         for(PassBase p : children.getValue())
         {
@@ -54,7 +54,7 @@ public class SourceImageFile extends SourceBase {
     }
 
     public Image getPreviewImage() {
-        return imageFile.getValue();
+        return imageFile.getValueImage();
     }
 
 }

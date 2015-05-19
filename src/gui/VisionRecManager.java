@@ -112,10 +112,21 @@ class VisionRecManager {
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 
 
+        //Drawing view setup
+        ListView corePassCreatorView = c.getPassCreatorCoreView();
+        //passCreatorDrawingView.getItems().add("tools.vision.passes.drawing.PassGridOverlay");
+        //If clicked, save the last selected item.
+        corePassCreatorView.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
+
+
+
+
         //
         //Debug view setup
         ListView passCreatorDebugView = c.getPassCreatorDebugView();
         passCreatorDebugView.getItems().add("tools.vision.passes.debug.PassHistogram");        //If clicked, save the last selected item.
+        passCreatorDebugView.getItems().add("tools.vision.passes.debug.PassHomography");
         passCreatorDebugView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> currentlySelected = (String) newValue);
 

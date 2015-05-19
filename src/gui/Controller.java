@@ -76,6 +76,13 @@ public class Controller {
     @FXML
     private ListView passCreatorDebugView;
 
+    public ListView getPassCreatorCoreView() {
+        return passCreatorCoreView;
+    }
+
+    @FXML
+    private ListView passCreatorCoreView;
+
     public ListView getPassCreatorDrawingView() {
         return passCreatorDrawingView;
     }

@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
 
 import java.io.File;
 
@@ -55,6 +56,7 @@ public class PropertyImageFile extends PropertyBase {
     {
         url.setText(file.getAbsolutePath());
         image = new Image(file.toURI().toString());
+        mat = Imgcodecs.imread(file.getAbsolutePath());
         view.setImage(image);
         //System.out.println("source: " + image.toString());
     }
@@ -68,8 +70,14 @@ public class PropertyImageFile extends PropertyBase {
         p.getChildren().add(view);
     }
 
-    public Image getValue()
+    public Mat getValue()
+    {
+        return mat;
+    }
+
+    public Image getValueImage()
     {
         return image;
     }
+
 }
